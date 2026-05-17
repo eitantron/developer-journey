@@ -6,8 +6,8 @@ def game():
     print_rules()#Print rules
     the_selection = selection()#ask for input
     print(the_selection)#compare
-    computer_selection()#let them know wheather they have won or not
-    #ask them to play game
+    computer = computer_selection()#let them know wheather they have won or not
+    comparison(the_selection, computer)#ask them to play game
 
 
 def print_welcome():
@@ -32,6 +32,17 @@ def computer_selection():
     print(random_number_generator)
     return random_number_generator
 
-def comparison():
-    pass
+def comparison(player, computer):
+    print("choose", player)
+    print("computer chooses:", computer)
+    if player == computer:
+        print("tie")
+    elif player == 1 and computer == 3:
+        print("you win")
+    elif player == 2 and computer == 1:
+        print ("you win!")
+    elif player == 3 and computer == 2:
+        print("you win")
+    else:
+        print("computer wins")
 game()
